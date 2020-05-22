@@ -2,6 +2,8 @@
 # Introduction
 This project describes how you can quickly build a Vagrant box, containing a Software AG (SAG) webMethods development/training/sandbox environment.  
   
+The box is configured similarly to the lab environments Software AG provides with their official training material, allowing you to practice the SAG training exercices on your own laptop.  
+  
 # Pre-requisites
 ## Vagrant
 [Vagrant](https://www.vagrantup.com/downloads.html) enables you to quickly create a Virtual Machine (VM), based on so called 'boxes', offering a wide variety of available Operating Systems, with optional additional features such as databases, middleware, etc... These boxes run on top of one or more types of hypervisors (VirtualBox, Hyper-V,...). We use the [VirtualBox](#virtualbox) hypervisor.  
