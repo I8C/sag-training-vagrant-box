@@ -1,0 +1,15 @@
+{
+    "name": "i8c/webMethods10.5",
+    "description": "This box contains Softare AG webMethods 10.5 on Windows Server 2019 and SQL Server 2019.",
+    "versions": [
+      {
+        "version": "1.0.0",
+        "providers": [
+          {
+            "name": "virtualbox",
+            "url": "webMethods10.5-1.0.0.box"
+          }
+        ]
+      }
+    ]
+  }

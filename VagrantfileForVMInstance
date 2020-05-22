@@ -1,0 +1,43 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Add required plugins to the required_plugins array of strings variable below:
+# 1) vagrant-vbguest
+# This plugin will automatically update the VirtualBox Guest Additions
+# to the version that matches your VirtualBox version.
+#
+required_plugins = %w( vagrant-vbguest )
+restart_manually = false
+
+required_plugins.each do |plugin|
+  if not Vagrant.has_plugin?(plugin)
+    system "vagrant plugin install #{plugin}"
+    restart_manually = true
+  end
+end
+
+if restart_manually
+  puts "Execute the vagrant utility again now that required plugins have been installed"
+  exit
+end
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "i8c/webMethods10.5"
+  config.vm.box_version = "1.0.0"
+
+  config.vm.provider "virtualbox" do |vb|
+    # Display the VirtualBox GUI when booting the machine
+    vb.gui = true
+    # Customize the amount of memory on the VM:
+    vb.memory = "8192"
+    vb.cpus = "4"
+    vb.name = "webMethods10.5-1.0.0"
+    # Enable copy paste from/to host/guest
+    vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
+    vb.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
+    # Increase video RAM to be able to resize on large screen
+    vb.customize ["modifyvm", :id, "--vram", "128"]
+  end
+
+end
