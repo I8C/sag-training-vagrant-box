@@ -81,7 +81,7 @@ Save the image in the _C:\vagrant_ folder of the VM. This minimizes the size of 
 ### Create an installation script  
 Using the _Advanced Options..._ button on the Welcome screen of the SAG Installer, create a SAG Installer installation script for your installation procedure. The procedure for this box is shown in the screenshots below. As you can see, most of the default values are accepted in the installation below. The password used for the database user _webmuser_, is identical to the username.  
   
-Note that you need to have your license key files available before you can perform the instation procedure.  
+Note that you need to have your license key files available before you can perform the installation procedure.  
   
 The script created for the installation below has been added to this project: [saginstallscript.txt](./saginstallscript.txt). The master password for this script = _vagrant_. This script installs the Common C/C++ libraries for CentraSite, requiring you to restart the VM and run the installer again to complete the installation. Creating an installation script saves you the annoyance of having to enter all the parameters again when you have to execute SAG installer a second time. Note that you can only use the script in this project if your Empower account has access to the same Software AG components.   
 You can try to edit this script using the SAG Installer. If this doesn't work, just perform the installation based on the screen shots below and use those to create a new script.  
